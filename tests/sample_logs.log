@@ -1,0 +1,14 @@
+2026-03-10 10:00:01 INFO User login
+email=admin@company.com
+
+2026-03-10 10:00:02 DEBUG authentication
+password=admin123
+
+2026-03-10 10:00:03 INFO API request
+api_key=sk-prod-xyz-123
+
+2026-03-10 10:00:04 ERROR stack trace
+NullPointerException at service.java:45
+
+2026-03-10 10:00:05 WARNING multiple login failures
+ip=192.168.0.1

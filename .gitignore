@@ -5,6 +5,7 @@ __pycache__/
 *.pyo
 *.pyd
 *.log
+!tests/sample_logs.log
 .server_pid
 frontend/node_modules/
 frontend/dist/
