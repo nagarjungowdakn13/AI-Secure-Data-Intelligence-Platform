@@ -27,6 +27,20 @@ class RiskBreakdown(BaseModel):
     low: int = 0
 
 
+class CorrelationInsight(BaseModel):
+    title: str
+    detail: str
+    severity: str
+    related_lines: List[int] = Field(default_factory=list)
+    source_names: List[str] = Field(default_factory=list)
+
+
+class ProcessingMetadata(BaseModel):
+    line_count: int = 0
+    chunk_count: int = 0
+    chunked: bool = False
+
+
 class AnalyzeResponse(BaseModel):
     summary: str
     content_type: str
@@ -36,6 +50,15 @@ class AnalyzeResponse(BaseModel):
     action: str
     risk_breakdown: RiskBreakdown
     recommendations: List[str]
+    correlations: List[CorrelationInsight] = Field(default_factory=list)
+    processing: ProcessingMetadata = Field(default_factory=ProcessingMetadata)
     insights: List[Insight]
     masked_content: str
     source_name: str
+
+
+class BatchAnalyzeResponse(BaseModel):
+    results: List[AnalyzeResponse]
+    cross_log_insights: List[CorrelationInsight] = Field(default_factory=list)
+    total_sources: int = 0
+    total_findings: int = 0

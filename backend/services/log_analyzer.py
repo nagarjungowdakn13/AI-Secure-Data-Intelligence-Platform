@@ -4,15 +4,16 @@ import re
 
 
 class LogAnalyzer:
-    ERROR_PATTERN = re.compile(r"\b(error|exception|traceback|stack trace|fatal)\b", re.IGNORECASE)
-    FAILURE_PATTERN = re.compile(r"\b(failed|failure|denied|unauthorized|invalid login|forbidden)\b", re.IGNORECASE)
+    ERROR_PATTERN = re.compile(r"\b(error|exception|traceback|stack trace|fatal|nullpointerexception)\b", re.IGNORECASE)
+    FAILURE_PATTERN = re.compile(r"\b(failed|failure|failures|denied|unauthorized|invalid login|forbidden)\b", re.IGNORECASE)
     SUSPICIOUS_PATTERN = re.compile(r"\b(exec|powershell|cmd\.exe|wget|curl|nmap|whoami)\b", re.IGNORECASE)
 
-    def analyze(self, content: str, source_name: str) -> list[dict]:
+    def analyze(self, content: str, source_name: str, start_line: int = 1) -> list[dict]:
         findings: list[dict] = []
         failure_streak = 0
 
-        for line_number, line in enumerate(content.splitlines(), start=1):
+        for offset, line in enumerate(content.splitlines()):
+            line_number = start_line + offset
             normalized = line.strip()
             if not normalized:
                 continue

@@ -305,3 +305,25 @@ docker run -p 10000:10000 --env-file .env ai-secure-data-intelligence-platform-a
 - Demo script: [docs/demo_script.md](docs/demo_script.md)
 - Sample log input: [tests/sample_logs.log](tests/sample_logs.log)
 - Test cases: [tests/test_cases.json](tests/test_cases.json)
+
+## Advanced Features
+
+- Real-time log streaming analysis through `POST /analyze/stream` using Server-Sent Events
+- Cross-log anomaly detection and correlation through `POST /analyze/files/correlate`
+- Correlation across repeated credentials, failures, stack traces, and shared indicators
+- In-memory rate limiting for repeated and large log uploads
+- Efficient chunk-based processing for large log content with processing metadata in responses
+
+### Advanced Endpoints
+
+#### `POST /analyze/stream`
+
+Streams chunk-level analysis events for large inline log payloads and ends with a final `complete` event containing the full response payload.
+
+#### `POST /analyze/files/correlate`
+
+Analyzes multiple uploaded log sources and returns:
+
+- per-file analysis results
+- cross-log correlation insights
+- aggregate source and finding counts

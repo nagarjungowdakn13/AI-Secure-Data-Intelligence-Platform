@@ -88,9 +88,10 @@ class RegexDetector:
             },
         ]
 
-    def scan_content(self, content: str, source_name: str) -> list[dict]:
+    def scan_content(self, content: str, source_name: str, start_line: int = 1) -> list[dict]:
         findings: list[dict] = []
-        for line_number, line in enumerate(content.splitlines(), start=1):
+        for offset, line in enumerate(content.splitlines()):
+            line_number = start_line + offset
             findings.extend(self._scan_line(line, line_number, source_name))
         return findings
 
