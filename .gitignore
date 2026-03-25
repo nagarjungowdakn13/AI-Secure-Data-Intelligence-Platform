@@ -1,0 +1,15 @@
+.venv/
+.venv311/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+.server_pid
+frontend/node_modules/
+frontend/dist/
+backend/__pycache__/
+backend/api/__pycache__/
+backend/models/__pycache__/
+backend/services/__pycache__/
+.env

@@ -1,0 +1,16 @@
+[
+  {
+    "name": "credential_exposure_in_logs",
+    "input_type": "log",
+    "content": "email=admin@company.com\npassword=admin123\napi_key=sk-test-xyzABC12345\nERROR stack trace: null pointer",
+    "expected_labels": ["email", "password", "api_key", "stack_trace"],
+    "expected_risk_level": "critical"
+  },
+  {
+    "name": "sql_dump_with_ip_and_card",
+    "input_type": "sql",
+    "content": "INSERT INTO customers VALUES ('john@example.com', '4111 1111 1111 1111', '10.0.0.5');",
+    "expected_labels": ["email", "credit_card", "ip_address"],
+    "expected_risk_level": "high"
+  }
+]
