@@ -327,3 +327,16 @@ Analyzes multiple uploaded log sources and returns:
 - per-file analysis results
 - cross-log correlation insights
 - aggregate source and finding counts
+
+
+<img width="1903" height="917" alt="image" src="https://github.com/user-attachments/assets/331d46e4-5f22-4f44-97e3-990d8cdd4775" />
+
+<img width="1919" height="971" alt="image" src="https://github.com/user-attachments/assets/56ec3c5a-e185-4b34-98b7-4a479a8f9f14" />
+
+<img width="686" height="743" alt="image" src="https://github.com/user-attachments/assets/7cc1dc3f-721f-4e82-8e2b-667cc6fea8a3" />
+
+<img width="361" height="919" alt="image" src="https://github.com/user-attachments/assets/c05b30ae-009f-4e75-8560-cd0da8a3ee70" />
+
+<img width="540" height="611" alt="image" src="https://github.com/user-attachments/assets/07efd210-c37c-4774-bfbc-2dfd9377bee8" />
+
+<img width="1207" height="573" alt="image" src="https://github.com/user-attachments/assets/0953705c-b53f-4f3d-8355-17d23cc406bd" />
